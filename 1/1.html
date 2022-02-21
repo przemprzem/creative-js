@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<canvas width="600" height="600"></canvas>
+
+		<script>
+
+			let canvas = document.querySelector('canvas');
+			let context = canvas.getContext('2d');
+
+			context.fillStyle = 'pink';
+			context.fillRect(50, 50, 500, 500);
+
+			context.lineWidth = 4;
+
+			context.beginPath();
+			context.rect(86, 86, 428, 428);
+			context.stroke();
+
+			context.strokeStyle = 'white';
+			context.beginPath()
+			context.arc(300, 300, 200, 0, Math.PI*2);
+			context.stroke();
+
+			context.lineWidth = 1;
+			context.beginPath();
+			context.arc(300, 300, 1, 0, Math.PI*2);
+			context.stroke();
+
+			function getRand(min, max) {
+    		return Math.random() * (max - min) + min;
+			}
+
+			for (let i = 0; i < 10; i++) {
+				context.lineWidth = getRand(1, 4);
+				context.beginPath();
+				context.arc(300, 300, 20*i, 0, Math.PI*2);
+				context.stroke();
+			}
+
+			function timedRefresh(timeoutPeriod) {
+				setTimeout("location.reload(true);",timeoutPeriod);
+			}
+
+		// window.onload = timedRefresh(50);
+
+		// NIE DZIAŁA - DLACZEGO??
+		// context.lineWidth=1;
+		// for (let i = 0; i = 196; i + 4) {
+		// 	context.beginPath()
+		// 	context.arc(300, 300, i, 0, Math.PI*2);
+		// 	context.stroke();
+		// }
+
+
+
+		// let year = 2022;
+		// let nextYear = year + 1;
+		// let text = 'tekst';
+		// let zdanie = 'Oto zdanie z tekstem: ' + text;
+		//
+		// function doSomething(param){
+		// 	console.log(param);
+		// }
+		//
+		// function add(a, b){
+		// 	return a + b;
+  	// }
+		//
+		// let result = add(6, 9);
+		//
+    // console.log(result);
+		//
+		// let multiply = (a, b) => {
+		// 	return a * b;
+		// }
+		//
+		// console.log(multiply(7, 8));
+
+// arrays + loops
+
+		// let years = [];
+		// let words = ['jeden', 'dwa', 'trzy', 'cztery', 'pięć', 'sześć'];
+
+		// for (i=0; i < words.length; i++) {
+		// console.log(words[i]);
+		// }
+
+		// for (i=0; i < 15; i++) {
+			// years.push(2020+i);
+		// }
+
+		// console.log(years);
+
+		</script>
+	</body>
+</html>
